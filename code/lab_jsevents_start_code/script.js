@@ -24,16 +24,12 @@ addToDo.addEventListener("submit", formSubmit);
 
 function formSubmit (event) {
     event.preventDefault();
-    const newItem = createToDoItem(textInput.value);
-    list.appendChild(newItem);
+    createToDoItem(event);
 }
 
 
-function createToDoItem (text) {
+function createToDoItem (event) {
 
-    addToDo.addEventListener("submit", (event) => {
-        event.preventDefault();
-    
         const newItem = document.createElement("li");
         newItem.innerText = event.target[0].value;
         list.appendChild(newItem); 
@@ -51,20 +47,21 @@ function createToDoItem (text) {
     //     });
     //     newItem.appendChild(deleteButton);
     //     list.appendChild(newItem);
-    });
 }
 
 function canDeleteToDoItem (event) {
-    const item = event.target[0].value;
-    item.removeChild(newItem);
-
+    console.log(event);
+    const item = event.target.parentElement;
+    list.removeChild(item);
 }
 
 // extension
 
 function completedItems (event) {
-    const item = event.target[0].value;
+    const item = event.target.parentElement;
     item.classList.add("completed");
+    item.querySelector("button").removeChild;
+    completedList.appendChild(item);
 }
 
 function createButton (text, onClick) {
