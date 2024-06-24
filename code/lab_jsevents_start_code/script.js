@@ -20,7 +20,7 @@ enterButton.addEventListener("click", () => {
 addToDo.addEventListener("submit", (event) => {
     event.preventDefault();
     const newItem = document.createElement("li");
-    newItem.innerText = event.target.value;
+    newItem.innerText = event.target[0].value;
     list.appendChild(newItem); 
 
 })
