@@ -5,6 +5,8 @@ const list = document.querySelector("#list");
 const textInput = document.querySelector("#new-todo"); 
 const textOutput = document.querySelector("#text-output");
 const addToDo = document.querySelector("#todo-form");
+const showDateButton = document.querySelector("#show-date"); 
+const dateDisplay = document.querySelector("#date-display"); 
 
 //Logic
 
@@ -22,6 +24,7 @@ addToDo.addEventListener("submit", (event) => {
     const newItem = document.createElement("li");
     newItem.innerText = event.target[0].value;
     list.appendChild(newItem); 
+    //made delete button 
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "delete";
     deleteButton.addEventListener("click", () => {
@@ -30,6 +33,11 @@ addToDo.addEventListener("submit", (event) => {
     newItem.appendChild(deleteButton);
     list.appendChild(newItem);
 });
+
+showDateButton.addEventListener("click", () => {
+    const currentDate = new Date(); 
+    dateDisplay.textContent = currentDate.toDateString()
+})
 
 
 
