@@ -24,20 +24,7 @@ addToDo.addEventListener("submit", formSubmit);
 
 function formSubmit (event) {
     event.preventDefault();
-<<<<<<< HEAD
-    const newItem = document.createElement("li");
-    newItem.innerText = event.target[0].value;
-    list.appendChild(newItem); 
-    //made delete button 
-    const deleteButton = document.createElement("button");
-    deleteButton.textContent = "delete";
-    deleteButton.addEventListener("click", () => {
-        list.removeChild(newItem);
-    });
-    newItem.appendChild(deleteButton);
-=======
     const newItem = createToDoItem(textInput.value);
->>>>>>> 84e223a (started extension and created complete button)
     list.appendChild(newItem);
 }
 
@@ -87,8 +74,6 @@ function createButton (text, onClick) {
     button.addEventListener("click", onClick);
     return button;
 }
-
-
 
 
 
