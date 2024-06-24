@@ -60,7 +60,7 @@ function canDeleteToDoItem (event) {
 function completedItems (event) {
     const item = event.target.parentElement;
     item.classList.add("completed");
-    item.querySelector("button").removeChild;
+    item.querySelector("button").remove();
     completedList.appendChild(item);
 }
 
